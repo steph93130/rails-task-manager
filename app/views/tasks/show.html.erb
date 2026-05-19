@@ -1,0 +1,46 @@
+<div class="container d-flex justify-content-center align-items-center vh-100">
+  <div class="w-50 text-center">
+
+    <h1 class="mb-4">SHOW</h1>
+    <h5 class="mb-4">Votre tâche</h5>
+
+    <div class="visu">
+
+      <div class="card mb-3 mx-auto w-75">
+        <div class="card-body">
+
+          <h1 class="text-primary"><%= @task.title %></h1>
+
+          <p><%= @task.details %></p>
+
+          <p>
+          <%= check_box_tag :completed, "1", @task.completed, disabled: true %>
+              Completed
+          </p>
+
+        <div class="d-flex justify-content-center gap-3 mt-4">
+
+  <%= link_to "Index",
+      tasks_path,
+      class: "btn btn-success" %>
+
+  <%= link_to "Edit",
+      edit_task_path(@task),
+      class: "btn btn-warning" %>
+
+  <%= button_to "Delete",
+      task_path(@task),
+      method: :delete,
+      data: {
+        turbo_confirm: "Are you sure?"
+      },
+      class: "btn btn-danger" %>
+
+</div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<div class="container d-flex justify-content-center align-items-center vh-100">
+  <div class="w-50 text-center">
+
+    <h1 class="mb-4">NEW</h1>
+    <h5>Créer votre tâche</h5>
+
+    <div class="visu mb-4">
+
+      <%= form_with model: @task do |f| %>
+
+        <div class="mb-4 text-start">
+          <%= f.label :title, class: "d-block mb-2" %>
+          <%= f.text_field :title, class: "form-control" %>
+        </div>
+
+        <div class="mb-4 text-start">
+          <%= f.label :details, class: "d-block mb-2" %>
+          <%= f.text_area :details, class: "form-control" %>
+        </div>
+
+        <div class="mb-4 text-start">
+          <%= f.label :completed, class: "d-block mb-2" %>
+          <%= f.check_box :completed %>
+        </div>
+
+        <div class="mb-4">
+          <%= f.submit "Créer", class: "btn btn-primary" %>
+        </div>
+
+      <% end %>
+
+    </div>
+  </div>
+</div>
